@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>戴彥綸 - 核果資訊學苑講師履歷</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -115,17 +112,109 @@
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             object-fit: contain; /* Ensure images are not cropped */
+            cursor: pointer; /* Add cursor pointer to indicate clickability */
+        }
+
+        /* Lightbox Styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+        .lightbox-overlay.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .lightbox-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 50px;
+            cursor: pointer;
+            padding: 10px;
+            user-select: none; /* Prevent text selection on button */
+            z-index: 1001; /* Ensure buttons are above image */
+        }
+        .lightbox-prev {
+            left: 20px;
+        }
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Adjust avatar image size for responsiveness */
+        #avatarImage {
+            max-width: 128px; /* Equivalent to w-32 */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 9999px; /* Equivalent to rounded-full */
+            object-fit: cover;
+            border-width: 4px; /* Equivalent to border-4 */
+            border-color: #ffffff; /* Equivalent to border-white */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-lg */
+            margin-bottom: 1rem; /* Equivalent to mb-4 */
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #avatarImage {
+                max-width: 96px; /* Smaller on mobile */
+            }
+            .lightbox-nav-button {
+                font-size: 30px; /* Smaller buttons on mobile */
+                padding: 5px;
+            }
+            .lightbox-prev {
+                left: 10px;
+            }
+            .lightbox-next {
+                right: 10px;
+            }
+            .lightbox-close {
+                font-size: 30px;
+                top: 10px;
+                right: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="resume-container">
-        <!-- Left Column (Sidebar) -->
         <div class="left-column">
-            <!-- Header Info -->
             <div class="flex flex-col items-center mb-6 header-info">
-                <!-- Profile Picture -->
-                <img src="488206608_9050810115023609_6826461954879792641_n.jpg" alt="戴彥綸 頭像" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg mb-4">
+                <img src="488206608_9050810115023609_6826461954879792641_n.jpg" alt="戴彥綸 頭像" id="avatarImage">
                 <h1 class="text-3xl font-bold mb-1">戴彥綸</h1>
                 <p class="text-xl font-light text-blue-200">資訊教育講師 | 音樂製作</p>
                 <div class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
@@ -141,7 +230,6 @@
                 </div>
             </div>
 
-            <!-- Contact Information -->
             <div class="mb-6">
                 <h2 class="section-title">聯絡方式</h2>
                 <ul>
@@ -151,7 +239,6 @@
                 </ul>
             </div>
 
-            <!-- Education -->
             <div class="mb-6">
                 <h2 class="section-title">學歷與專業背景</h2>
                 <div class="mb-4">
@@ -178,9 +265,7 @@
             </div>
         </div>
 
-        <!-- Right Column (Main Content) -->
         <div class="right-column">
-            <!-- 個人簡介 (Personal Introduction) -->
             <div class="mb-6">
                 <h2 class="section-title">個人簡介</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -188,7 +273,6 @@
                 </p>
             </div>
 
-            <!-- 核心教學專長 (Core Teaching Expertise) -->
             <div class="mb-6">
                 <h2 class="section-title">核心教學專長</h2>
                 <ul class="list-disc list-inside text-gray-700 leading-relaxed">
@@ -200,7 +284,6 @@
                 </ul>
             </div>
 
-            <!-- 教學與授課經歷 (Teaching and Lecturing Experience) -->
             <div class="mb-6">
                 <h2 class="section-title">教學與授課經歷</h2>
                 <div class="mb-4">
@@ -224,7 +307,6 @@
                 </div>
             </div>
 
-            <!-- 線上教學資源 (Online Teaching Resources) -->
             <div class="mb-6">
                 <h2 class="section-title">線上教學資源</h2>
                 <ul class="list-disc list-inside text-gray-700">
@@ -235,17 +317,15 @@
                 </ul>
             </div>
 
-            <!-- 著作 (Publications) -->
             <div class="mb-6">
                 <h2 class="section-title">著作</h2>
                 <p class="text-gray-700">AI音樂夢工廠:AI帶你輕鬆玩音樂 (2024)。新北市：泰宇出版社。</p>
             </div>
 
-            <!-- 教學現場照片 (Teaching Scene Photos) -->
             <div class="mb-6">
                 <h2 class="section-title">教學現場照片</h2>
                 <div class="image-gallery">
-                    <img src="IMG_1479.jpeg" alt="教學現場照片 1">
+                    <img src="0333_g.jpg" alt="教學現場照片 1">
                     <img src="505734541_4077726349117696_3681916159308389001_n.jpg" alt="教學現場照片 2">
                     <img src="505993799_4077726215784376_247159821311959716_n.jpg" alt="教學現場照片 3">
                     <img src="505279508_4077769845780013_8705209493223398711_n.jpg" alt="教學現場照片 4">
@@ -258,5 +338,105 @@
             </div>
         </div>
     </div>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <span class="lightbox-nav-button lightbox-prev" id="lightboxPrev">&#10094;</span>
+        <span class="lightbox-nav-button lightbox-next" id="lightboxNext">&#10095;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Expanded Image" id="lightboxImage">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxOverlay = document.getElementById('lightboxOverlay');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            const avatarImage = document.getElementById('avatarImage');
+            const galleryImages = Array.from(document.querySelectorAll('.image-gallery img')); // Convert NodeList to Array
+
+            let currentImageIndex = -1; // -1 indicates no image is open, 0 for avatar, 1+ for gallery
+
+            // Combine all clickable images into one array for easier navigation
+            const allImages = [avatarImage, ...galleryImages];
+
+            function openLightbox(index) {
+                currentImageIndex = index;
+                const imageSrc = allImages[currentImageIndex].src;
+                lightboxImage.src = imageSrc;
+                lightboxOverlay.classList.add('visible');
+            }
+
+            function closeLightbox() {
+                lightboxOverlay.classList.remove('visible');
+                currentImageIndex = -1; // Reset index when closing
+            }
+
+            function navigateImages(direction) {
+                if (currentImageIndex === -1) return; // No image is open
+
+                let nextIndex = currentImageIndex + direction;
+
+                // Loop around if reaching the ends
+                if (nextIndex < 0) {
+                    nextIndex = allImages.length - 1;
+                } else if (nextIndex >= allImages.length) {
+                    nextIndex = 0;
+                }
+                
+                openLightbox(nextIndex); // Use the existing openLightbox to display the new image
+            }
+
+            // Event listener for avatar image
+            if (avatarImage) {
+                avatarImage.addEventListener('click', () => {
+                    openLightbox(0); // Avatar is always the first image (index 0)
+                });
+            }
+
+            // Event listeners for gallery images
+            galleryImages.forEach((image, index) => {
+                image.addEventListener('click', () => {
+                    openLightbox(index + 1); // Gallery images start from index 1
+                });
+            });
+
+            // Event listeners for navigation buttons
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing lightbox when clicking nav buttons
+                navigateImages(-1); // Previous image
+            });
+
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing lightbox when clicking nav buttons
+                navigateImages(1); // Next image
+            });
+
+            // Event listener to close lightbox when clicking outside the image or on the close button
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) {
+                    closeLightbox();
+                }
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            // Close lightbox with Escape key and navigate with Arrow keys
+            document.addEventListener('keydown', (e) => {
+                if (lightboxOverlay.classList.contains('visible')) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        navigateImages(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        navigateImages(1);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
