@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>戴彥綸 - 核果資訊學苑講師履歷</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .resume-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row; /* Changed to row for two-column layout */
+        }
+        @media (max-width: 768px) {
+            .resume-container {
+                width: 100%;
+                min-height: auto;
+                padding: 0; /* Remove padding for mobile to allow internal padding */
+                flex-direction: column; /* Stack columns on small screens */
+            }
+            .left-column, .right-column {
+                width: 100% !important;
+                padding: 15px;
+            }
+            .left-column {
+                border-right: none !important;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            .header-info {
+                text-align: center;
+            }
+            .header-info .text-xl {
+                font-size: 1.125rem; /* Smaller font for mobile */
+            }
+            .header-info .flex-wrap {
+                justify-content: center;
+            }
+        }
+        .left-column {
+            width: 35%; /* Adjust width as per reference */
+            background-color: #2d3748; /* Darker background for left column */
+            color: #ffffff;
+            padding: 30px 20px;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            box-sizing: border-box;
+        }
+        .right-column {
+            width: 65%; /* Adjust width as per reference */
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 0.25rem;
+        }
+        .left-column .section-title {
+            color: #ffffff;
+            border-bottom-color: #63b3ed;
+        }
+        .sub-section-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .left-column .sub-section-title {
+            color: #e2e8f0;
+        }
+        .list-item {
+            margin-bottom: 0.5rem;
+        }
+        .icon {
+            color: #63b3ed; /* Lighter blue for icons in dark column */
+            width: 18px;
+            text-align: center;
+        }
+        .left-column .icon {
+            color: #63b3ed;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            object-fit: contain; /* Ensure images are not cropped */
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Left Column (Sidebar) -->
+        <div class="left-column">
+            <!-- Header Info -->
+            <div class="flex flex-col items-center mb-6 header-info">
+                <!-- Profile Picture -->
+                <img src="488206608_9050810115023609_6826461954879792641_n.jpg" alt="戴彥綸 頭像" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg mb-4">
+                <h1 class="text-3xl font-bold mb-1">戴彥綸</h1>
+                <p class="text-xl font-light text-blue-200">資訊教育講師 | 音樂製作</p>
+                <div class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+                    <a href="https://www.cake.me/me/jeremy641" target="_blank" class="flex items-center text-white hover:underline">
+                        <i class="fas fa-link icon mr-1"></i>Cake
+                    </a>
+                    <a href="https://www.linkedin.com/in/yan-lun-dai-6a5554211/" target="_blank" class="flex items-center text-white hover:underline">
+                        <i class="fab fa-linkedin icon mr-1"></i>LinkedIn
+                    </a>
+                    <a href="https://www.youtube.com/@jeremy641" target="_blank" class="flex items-center text-white hover:underline">
+                        <i class="fab fa-youtube icon mr-1"></i>YouTube
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-6">
+                <h2 class="section-title">聯絡方式</h2>
+                <ul>
+                    <li class="flex items-center list-item text-gray-200"><i class="fas fa-phone-alt icon mr-2"></i>0905630341</li>
+                    <li class="flex items-center list-item text-gray-200"><i class="fas fa-envelope icon mr-2"></i>jeremy641@gmail.com</li>
+                    <li class="flex items-center list-item text-gray-200"><i class="fas fa-home icon mr-2"></i>桃園市中壢區健行路148巷6號</li>
+                </ul>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h2 class="section-title">學歷與專業背景</h2>
+                <div class="mb-4">
+                    <h3 class="sub-section-title">國立臺北科技大學</h3>
+                    <p class="text-gray-300">互動設計系研究所碩士班 (2023 – 2025，預計 2025/08 畢)</p>
+                    <ul class="list-disc list-inside text-gray-400 ml-4">
+                        <li>研究 AI 虛擬學伴在資訊課程之應用</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="sub-section-title">中原大學</h3>
+                    <p class="text-gray-300">資訊管理學士 & 數位音樂學程畢業 (2018 – 2023)</p>
+                    <ul class="list-disc list-inside text-gray-400 ml-4">
+                        <li>奠定資訊與音樂雙主修基礎</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <h3 class="sub-section-title">Nuvoton 新唐科技</h3>
+                    <p class="text-gray-300">IC 音訊設計工程師 (2025- )</p>
+                    <ul class="list-disc list-inside text-gray-400 ml-4">
+                        <li>提供最前沿聲音處理實戰案例，強化教學內容產業連結</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (Main Content) -->
+        <div class="right-column">
+            <!-- 個人簡介 (Personal Introduction) -->
+            <div class="mb-6">
+                <h2 class="section-title">個人簡介</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    我是一名具備五年以上資訊與創意科技教學經驗的資訊教育講師。專精於程式設計 (Python, C#, Java, Scratch, Micro:bit)、互動媒體與遊戲開發 (Unity, Web Design)、以及前瞻的 AI 與數位藝術應用 (生成式AI, LLM Prompt Engineering)。我致力於透過專案導向學習 (PBL) 和翻轉教室等創新教學法，引導學生從「動手做」中理解原理，並將所學整合應用於實際專案。同時，我具備IC音訊設計工程師背景與音樂製作能力，能將業界實務經驗融入課程，提供學生跨領域的學習視野。目前正攻讀國立臺北科技大學互動設計碩士學位，持續探索AI在教育領域的應用。
+                </p>
+            </div>
+
+            <!-- 核心教學專長 (Core Teaching Expertise) -->
+            <div class="mb-6">
+                <h2 class="section-title">核心教學專長</h2>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                    <li class="mb-2"><strong>程式設計：</strong>C#、Python、Java、Scratch、Micro:bit；強調「動手做 → 原理解說 → 專案整合」三段式引導。</li>
+                    <li class="mb-2"><strong>互動媒體 & 遊戲開發：</strong>Unity 2D/3D、Web Design、p5.js；擅長將物理、聲音感測與 AI 邏輯結合，創造沉浸式體驗。</li>
+                    <li class="mb-2"><strong>AI 與數位藝術：</strong>生成式 AI (Suno、Stable Diffusion、Gen-AI Music)、AI 聊天代理 (SillyTavern)、LLM Prompt Engineering。</li>
+                    <li class="mb-2"><strong>數位音樂與聲學：</strong>SoundFont 設計、MIDI 編曲、IC 音訊訊號處理；能從音色合成到互動裝置。</li>
+                    <li class="mb-2"><strong>教學法：</strong>以 PBL、翻轉教室 搭配 小班制差異化 策略，並使用即時測驗 (Kahoot/Quizizz) 與 LMS 追蹤學習歷程，提升課堂互動與成效。</li>
+                </ul>
+            </div>
+
+            <!-- 教學與授課經歷 (Teaching and Lecturing Experience) -->
+            <div class="mb-6">
+                <h2 class="section-title">教學與授課經歷</h2>
+                <div class="mb-4">
+                    <h3 class="sub-section-title">核果資訊學苑 Nuts Institute (2020 – 2022)</h3>
+                    <p class="text-gray-700"><strong>職務:</strong> 講師暨講師培訓講師</p>
+                    <p class="text-gray-700"><strong>主要課程與成果:</strong> 教授 Scratch、Micro:bit、網頁設計、Unity 2D/3D 及數位音樂製作等課程，並協助培訓新進講師。</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="sub-section-title">校園社團講師 (2020 – 2025)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li class="mb-2"><strong>桃園市立大勇國小 (2023-2025):</strong> 科技藝術社團講師，教授 Scratch、Micro:bit、Web/Unity/Roblox 遊戲開發、數位音樂與 AI 跨域課程。</li>
+                        <li class="mb-2"><strong>桃園市立建國國小 (2020-2023):</strong> 音樂與遊戲創作社團講師，教授 Scratch、Micro:bit、Web/Unity 遊戲開發、數位音樂與 AI 跨域課程。</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h3 class="sub-section-title">大專院校與公部門研習 (2023 – 2024)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li class="mb-2"><strong>北科大互動設計系「程式小助理課程系列 01：SillyTavern AI 虛擬人建置」直播:</strong> 示範本地 LLM、角色指令工程與前端串接，並深入探討 <strong>AI 虛擬人</strong>建置。</li>
+                        <li class="mb-2"><strong>桃園市科技美學教師精進與實踐計畫:</strong> 舉辦「元宇宙教育落地深耕：數位藝術 APP」工作坊，內容涵蓋 <strong>AR/VR、OpenBrush、Sketchfab</strong>，以及「AI 輔助生成式藝術創作入門 Day 3」工作坊，聚焦 Stable Diffusion、Canva AI、AI Agent 本地端LLM助理製作。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 線上教學資源 (Online Teaching Resources) -->
+            <div class="mb-6">
+                <h2 class="section-title">線上教學資源</h2>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li class="mb-2"><strong>C# 程式入門教學系列 (共 4 集，YouTube):</strong> <a href="https://youtu.be/EsA-VUkqCOo" target="_blank" class="text-blue-600 hover:underline">觀念講解 + Live Coding</a>，以專案驅動方式示範 .NET 開發流程。</li>
+                    <li class="mb-2"><strong>程式小助理課程 01 – SillyTavern AI (北科大互動設計 AI Lab):</strong> <a href="https://youtu.be/Sp68e0KQZWs" target="_blank" class="text-blue-600 hover:underline">Prompt 設計、API 佈署到聊天室機器人，並探討虛擬人應用</a>。</li>
+                    <li class="mb-2"><strong>元宇宙教育｜數位藝術 APP (桃園市科技美學教師研習):</strong> <a href="https://youtu.be/GozuuegHvJw" target="_blank" class="text-blue-600 hover:underline">AR/VR、OpenBrush、Sketchfab，以及Spatial元宇宙空間</a>。</li>
+                    <li class="mb-2"><strong>AI 輔助生成式藝術創作 Day3 (桃園市科技美學教師研習):</strong> <a href="https://youtube.com/live/6YGy6cdN9_E?feature=share" target="_blank" class="text-blue-600 hover:underline">教導教師使用iPad實作p5.js，Stable Diffusion + 本地端LLM 實作</a>。</li>
+                </ul>
+            </div>
+
+            <!-- 著作 (Publications) -->
+            <div class="mb-6">
+                <h2 class="section-title">著作</h2>
+                <p class="text-gray-700">AI音樂夢工廠:AI帶你輕鬆玩音樂 (2024)。新北市：泰宇出版社。</p>
+            </div>
+
+            <!-- 教學現場照片 (Teaching Scene Photos) -->
+            <div class="mb-6">
+                <h2 class="section-title">教學現場照片</h2>
+                <div class="image-gallery">
+                    <img src="IMG_1479.jpeg" alt="教學現場照片 1">
+                    <img src="505734541_4077726349117696_3681916159308389001_n.jpg" alt="教學現場照片 2">
+                    <img src="505993799_4077726215784376_247159821311959716_n.jpg" alt="教學現場照片 3">
+                    <img src="505279508_4077769845780013_8705209493223398711_n.jpg" alt="教學現場照片 4">
+                    <img src="506000562_4077726359117695_1769619885297638574_n.jpg" alt="教學現場照片 5">
+                    <img src="line_171660465173421.jpg" alt="教學現場照片 6">
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    <em></em>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
