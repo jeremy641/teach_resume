@@ -17,11 +17,18 @@
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
+
+            /* 新增背景圖片樣式，使用您提供的連結 */
+            background-image: url('https://images.unsplash.com/photo-1699462515761-90db271d77c8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; /* 讓圖片覆蓋整個背景區域 */
+            background-repeat: no-repeat; /* 不重複圖片 */
+            background-position: center center; /* 圖片置中顯示 */
+            background-attachment: fixed; /* 圖片固定不動，捲動頁面時圖片不會跟著捲動 */
         }
         .resume-container {
             width: 210mm; /* A4 width */
             min-height: 297mm; /* A4 height */
-            background-color: #ffffff;
+            background-color: #ffffff; /* 保持履歷內容區塊為白色 */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             overflow: hidden;
@@ -340,9 +347,9 @@
     </div>
 
     <div class="lightbox-overlay" id="lightboxOverlay">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <span class="lightbox-nav-button lightbox-prev" id="lightboxPrev">&#10094;</span>
-        <span class="lightbox-nav-button lightbox-next" id="lightboxNext">&#10095;</span>
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <span class="lightbox-nav-button lightbox-prev" id="lightboxPrev">❮</span>
+        <span class="lightbox-nav-button lightbox-next" id="lightboxNext">❯</span>
         <div class="lightbox-content">
             <img src="" alt="Expanded Image" id="lightboxImage">
         </div>
