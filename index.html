@@ -194,10 +194,26 @@
             margin-bottom: 1rem; /* Equivalent to mb-4 */
             cursor: pointer;
         }
+        /* Style for the book cover image */
+        #bookCoverImage {
+            max-width: 12rem; /* Equivalent to max-w-xs */
+            height: auto;
+            border-radius: 0.5rem; /* Equivalent to rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+            margin-top: 1rem; /* Equivalent to mt-4 */
+            display: block; /* Equivalent to block */
+            margin-left: auto; /* Equivalent to mx-auto */
+            margin-right: auto; /* Equivalent to mx-auto */
+            cursor: pointer;
+        }
+
 
         @media (max-width: 768px) {
             #avatarImage {
                 max-width: 96px; /* Smaller on mobile */
+            }
+            #bookCoverImage {
+                max-width: 8rem; /* Smaller on mobile */
             }
             .lightbox-nav-button {
                 font-size: 30px; /* Smaller buttons on mobile */
@@ -283,7 +299,7 @@
             <div class="mb-6">
                 <h2 class="section-title">核心教學專長</h2>
                 <ul class="list-disc list-inside text-gray-700 leading-relaxed">
-                    <li class="mb-2"><strong>程式設計：</strong>C#、Python、Java、Scratch、Micro:bit；強調「動手做 → 原理解說 → 專案整合」三段式引導。</li>
+                    <li class="mb-2"><strong>程式設計：</strong>C#、Python、Java、Scratch、Micro:bit；強調「動手做 → 原理說 → 專案整合」三段式引導。</li>
                     <li class="mb-2"><strong>互動媒體 & 遊戲開發：</strong>Unity 2D/3D、Web Design、p5.js；擅長將物理、聲音感測與 AI 邏輯結合，創造沉浸式體驗。</li>
                     <li class="mb-2"><strong>AI 與數位藝術：</strong>生成式 AI (Suno、Stable Diffusion、Gen-AI Music)、AI 聊天代理 (SillyTavern)、LLM Prompt Engineering。</li>
                     <li class="mb-2"><strong>數位音樂與聲學：</strong>SoundFont 設計、MIDI 編曲、IC 音訊訊號處理；能從音色合成到互動裝置。</li>
@@ -303,6 +319,13 @@
                     <ul class="list-disc list-inside text-gray-700">
                         <li class="mb-2"><strong>桃園市立大勇國小 (2023-現在):</strong> 科技藝術社團講師，教授 Scratch、Micro:bit、Web/Unity/Roblox 遊戲開發、數位音樂與 AI 跨域課程。</li>
                         <li class="mb-2"><strong>桃園市立建國國小 (2020-2023):</strong> 音樂與遊戲創作社團講師，教授 Scratch、Micro:bit、Web/Unity 遊戲開發、數位音樂與 AI 跨域課程。</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h3 class="sub-section-title">AI音樂研習營 講師 (2023-2024)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>應 <strong>泰宇出版社</strong> 邀約，講授AI音樂作曲之研習教學課程。</li>
+                        <li>授課地點：已於 <strong>台中曉明女中、宜蘭國華國中、宜蘭羅東高中、淡水淡江高中</strong> 進行。</li>
                     </ul>
                 </div>
                 <div class="mb-4">
@@ -331,7 +354,7 @@
             <div class="mb-6">
                 <h2 class="section-title">著作</h2>
                 <p class="text-gray-700">AI音樂夢工廠:AI帶你輕鬆玩音樂 (2024)。新北市：泰宇出版社。</p>
-                <img src="1B5FCA12-5ECE-42A4-A18F-2249390EBE0E.jpg" alt="AI音樂夢工廠 書籍封面" class="mt-4 rounded-lg shadow-md max-w-xs mx-auto block">
+                <img src="1B5FCA12-5ECE-42A4-A18F-2249390EBE0E.jpg" alt="AI音樂夢工廠 書籍封面" id="bookCoverImage" class="mt-4 rounded-lg shadow-md max-w-xs mx-auto block">
             </div>
 
             <div class="mb-6">
@@ -372,12 +395,14 @@
             const lightboxPrev = document.getElementById('lightboxPrev');
             const lightboxNext = document.getElementById('lightboxNext');
             const avatarImage = document.getElementById('avatarImage');
+            const bookCoverImage = document.getElementById('bookCoverImage'); // Get the book cover image
             const galleryImages = Array.from(document.querySelectorAll('.image-gallery img')); // Convert NodeList to Array
 
-            let currentImageIndex = -1; // -1 indicates no image is open, 0 for avatar, 1+ for gallery
-
             // Combine all clickable images into one array for easier navigation
-            const allImages = [avatarImage, ...galleryImages];
+            // Order: Avatar, Book Cover, then Gallery Images
+            const allImages = [avatarImage, bookCoverImage, ...galleryImages];
+
+            let currentImageIndex = -1; // -1 indicates no image is open
 
             function openLightbox(index) {
                 currentImageIndex = index;
@@ -413,10 +438,17 @@
                 });
             }
 
+            // Event listener for book cover image
+            if (bookCoverImage) {
+                bookCoverImage.addEventListener('click', () => {
+                    openLightbox(1); // Book cover is the second image (index 1)
+                });
+            }
+
             // Event listeners for gallery images
             galleryImages.forEach((image, index) => {
                 image.addEventListener('click', () => {
-                    openLightbox(index + 1); // Gallery images start from index 1
+                    openLightbox(index + 2); // Gallery images start from index 2 (after avatar and book cover)
                 });
             });
 
